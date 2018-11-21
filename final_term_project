@@ -32,3 +32,33 @@ r2 = second.rfind('<div class="score">')
 
 second_title = second[t2+22:r2-67]
 print(second_title)
+
+t3 = third.find('<strong class="title">')
+r3 = third.rfind('<div class="score">')
+
+third_title = third[t3+22:r3-67]
+print('3위', third_title)
+
+t4 = forth.find('<strong class="title">')
+r4 = forth.rfind('<div class="score">')
+
+forth_title = forth[t4+22:r4-67]
+print('4위', forth_title)
+
+t5 = fifth.find('<strong class="title">')
+r5 = fifth.rfind('<div class="score">')
+
+fifth_title = fifth[t5+22:r5-67]
+print('5위', fifth_title)
+
+t6 = sixth.find('<strong class="title">')
+r6 = sixth.rfind('<div class="score">')
+
+sixth_title = sixth[t6+22:r6-67]
+print('6위', sixth_title)
+
+t7 = seventh.find('<strong class="title">')
+r7 = seventh.rfind('<div class="score">')
+
+seventh_title = seventh[t7+22:r7-67]
+print('7위', seventh_title)
