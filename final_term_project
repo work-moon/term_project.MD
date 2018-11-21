@@ -62,3 +62,5 @@ r7 = seventh.rfind('<div class="score">')
 
 seventh_title = seventh[t7+22:r7-67]
 print('7위', seventh_title)
+
+rate_question = input('현재 실시간 예매율이 궁금하다면? 영화명을 입력하세요. (단, 순위 내에 있는 영화만을 보여줍니다.)')
