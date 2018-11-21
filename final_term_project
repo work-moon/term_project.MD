@@ -25,13 +25,13 @@ t1 = first.find('<strong class="title">')
 r1 = first.rfind('<div class="score">')
 
 first_title = first[t1+22:r1-67]
-print(first_title)
+print('1위', first_title)
 
 t2 = second.find('<strong class="title">')
 r2 = second.rfind('<div class="score">')
 
 second_title = second[t2+22:r2-67]
-print(second_title)
+print('2위', second_title)
 
 t3 = third.find('<strong class="title">')
 r3 = third.rfind('<div class="score">')
