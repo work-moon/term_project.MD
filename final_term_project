@@ -89,3 +89,8 @@ elif rate_question == seventh_title:
     print('예매율은 %s입니다.'%(seventh_rate))
 else :
     print('순위에 해당 영화가 존재하지 않습니다.')
+    
+import time
+k =str(time.asctime(time.localtime(time.time())))
+
+print('현재시간은 %s 입니다.'%k)    
