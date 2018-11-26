@@ -71,7 +71,7 @@ third_rate = third[third.find('예매율')+9:third.find('</span></strong>')]
 forth_rate = forth[forth.find('예매율')+9:forth.find('</span></strong>')]
 fifth_rate = fifth[fifth.find('예매율')+9:fifth.find('</span></strong>')]
 sixth_rate = sixth[sixth.find('예매율')+9:sixth.find('</span></strong>')]
-seventh_rate = seventh[seventh.find('예매율')+9:seventh.find('</span></strong>')
+seventh_rate = seventh[seventh.find('예매율')+9:seventh.find('</span></strong>')]
 
 if rate_question == first_title:
     print('예매율은 %s입니다.'%(first_rate))
