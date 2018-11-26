@@ -64,3 +64,29 @@ seventh_title = seventh[t7+22:r7-67]
 print('7위', seventh_title)
 
 rate_question = input('현재 실시간 예매율이 궁금하다면? 영화명을 입력하세요. (단, 순위 내에 있는 영화만을 보여줍니다.)')
+
+first_rate = first[first.find('예매율')+9:first.find('예매율')+14]
+second_rate = second[second.find('예매율')+9:second.find('예매율')+14]
+third_rate = third[third.find('예매율')+9:third.find('예매율')+14]
+forth_rate = forth[forth.find('예매율')+9:forth.find('예매율')+14]
+fifth_rate = fifth[fifth.find('예매율')+9:fifth.find('예매율')+14]
+sixth_rate = sixth[sixth.find('예매율')+9:sixth.find('예매율')+14]
+seventh_rate = seventh[seventh.find('예매율')+9:seventh.find('예매율')+14]
+
+
+if rate_question == first_title:
+    print('예매율은 %s입니다.'%(first_rate))
+elif rate_question == second_title:
+    print('예매율은 %s입니다.'%(second_rate))
+elif rate_question == third_title:
+    print('예매율은 %s입니다.'%(third_rate))
+elif rate_question == forth_title:
+    print('예매율은 %s입니다.'%(forth_rate))
+elif rate_question == fifth_title:
+    print('예매율은 %s입니다.'%(fifth_rate))
+elif rate_question == sixth_title:
+    print('예매율은 %s입니다.'%(sixth_rate))
+elif rate_question == seventh_title:
+    print('예매율은 %s입니다.'%(seventh_rate))
+else :
+    print('순위에 해당 영화가 존재하지 않습니다.')
