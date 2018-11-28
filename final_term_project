@@ -63,6 +63,11 @@ r7 = seventh.rfind('<div class="score">')
 seventh_title = seventh[t7+22:r7-67]
 print('7위', seventh_title)
 
+import time
+k =str(time.asctime(time.localtime(time.time())))
+
+print('현재시간은 %s 입니다.'%k)    
+
 rate_question = input('현재 실시간 예매율이 궁금하다면? 영화명을 입력하세요. (단, 순위 내에 있는 영화만을 보여줍니다.)')
 
 first_rate = first[first.find('예매율')+9:first.find('</span></strong>')]
@@ -90,7 +95,3 @@ elif rate_question == seventh_title:
 else :
     print('순위에 해당 영화가 존재하지 않습니다.')
     
-import time
-k =str(time.asctime(time.localtime(time.time())))
-
-print('현재시간은 %s 입니다.'%k)    
