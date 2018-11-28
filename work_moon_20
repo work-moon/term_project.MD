@@ -1,0 +1,22 @@
+import requests
+
+url = 'http://www.cgv.co.kr/movies/'
+a = requests.get(url)
+a.encoding = 'utf8'
+data = str(a.text)
+
+b = data.find('<strong class="rank">No.1</strong>')
+c = data.find('<strong class="rank">No.2</strong>')
+d = data.find('<strong class="rank">No.3</strong>')
+e = data.find('<strong class="rank">No.4</strong>')
+f = data.find('<strong class="rank">No.5</strong>')
+g = data.find('<strong class="rank">No.6</strong>')
+h = data.find('<strong class="rank">No.7</strong>')
+
+first = data[b:c]
+second = data[c:d]
+third = data[d:e]
+forth = data[e:f]
+fifth = data[f:g]
+sixth = data[g:h]
+seventh = data[h:h+2000]
