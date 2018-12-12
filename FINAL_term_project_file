@@ -1,0 +1,103 @@
+file1 = open('cgv_rank.txt','w')
+
+
+import requests
+
+url = 'http://www.cgv.co.kr/movies/'
+a = requests.get(url)
+a.encoding = 'utf8'
+data = str(a.text)
+
+b = data.find('<strong class="rank">No.1</strong>')
+c = data.find('<strong class="rank">No.2</strong>')
+d = data.find('<strong class="rank">No.3</strong>')
+e = data.find('<strong class="rank">No.4</strong>')
+f = data.find('<strong class="rank">No.5</strong>')
+g = data.find('<strong class="rank">No.6</strong>')
+h = data.find('<strong class="rank">No.7</strong>')
+
+first = data[b:c]
+second = data[c:d]
+third = data[d:e]
+forth = data[e:f]
+fifth = data[f:g]
+sixth = data[g:h]
+seventh = data[h:h+2000]
+
+t1 = first.find('<strong class="title">')
+r1 = first.rfind('<div class="score">')
+
+first_title = first[t1+22:r1-67]
+print('1위', first_title,file=file1)
+
+t2 = second.find('<strong class="title">')
+r2 = second.rfind('<div class="score">')
+
+second_title = second[t2+22:r2-67]
+print('2위', second_title,file=file1)
+
+t3 = third.find('<strong class="title">')
+r3 = third.rfind('<div class="score">')
+
+third_title = third[t3+22:r3-67]
+print('3위', third_title,file=file1)
+
+t4 = forth.find('<strong class="title">')
+r4 = forth.rfind('<div class="score">')
+
+forth_title = forth[t4+22:r4-67]
+print('4위', forth_title,file=file1)
+
+t5 = fifth.find('<strong class="title">')
+r5 = fifth.rfind('<div class="score">')
+
+fifth_title = fifth[t5+22:r5-67]
+print('5위', fifth_title,file=file1)
+
+t6 = sixth.find('<strong class="title">')
+r6 = sixth.rfind('<div class="score">')
+
+sixth_title = sixth[t6+22:r6-67]
+print('6위', sixth_title,file=file1)
+
+t7 = seventh.find('<strong class="title">')
+r7 = seventh.rfind('<div class="score">')
+
+seventh_title = seventh[t7+22:r7-67]
+print('7위', seventh_title,file=file1)
+
+import time
+k =str(time.asctime(time.localtime(time.time())))
+
+print('현재시간은 %s 입니다.'%k,file=file1)
+
+file1.close()
+
+rate_question = input('현재 실시간 예매율이 궁금하다면? 영화명을 입력하세요. (단, 순위 내에 있는 영화만을 보여줍니다.)')
+
+first_rate = first[first.find('예매율')+9:first.find('</span></strong>')]
+second_rate = second[second.find('예매율')+9:second.find('</span></strong>')]
+third_rate = third[third.find('예매율')+9:third.find('</span></strong>')]
+forth_rate = forth[forth.find('예매율')+9:forth.find('</span></strong>')]
+fifth_rate = fifth[fifth.find('예매율')+9:fifth.find('</span></strong>')]
+sixth_rate = sixth[sixth.find('예매율')+9:sixth.find('</span></strong>')]
+seventh_rate = seventh[seventh.find('예매율')+9:seventh.find('</span></strong>')]
+
+if rate_question == first_title:
+    print('예매율은 %s입니다.'%(first_rate))
+elif rate_question == second_title:
+    print('예매율은 %s입니다.'%(second_rate))
+elif rate_question == third_title:
+    print('예매율은 %s입니다.'%(third_rate))
+elif rate_question == forth_title:
+    print('예매율은 %s입니다.'%(forth_rate))
+elif rate_question == fifth_title:
+    print('예매율은 %s입니다.'%(fifth_rate))
+elif rate_question == sixth_title:
+    print('예매율은 %s입니다.'%(sixth_rate))
+elif rate_question == seventh_title:
+    print('예매율은 %s입니다.'%(seventh_rate))
+else :
+    print('순위에 해당 영화가 존재하지 않습니다.')
+
+
