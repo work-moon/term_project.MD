@@ -1,8 +1,13 @@
 from flask import Flask
 app = Flask(__name__)
+file1 = open("cgv_rank.txt", "r")
 
 @app.route("/cgv")
 def cgv():
+    s = file1.readlines()
+    reS = ''
+    for line in s:
+        reS+ = line + "<br/>"
     return file1
 
 app.run(debug=True, host='0.0.0.0')
